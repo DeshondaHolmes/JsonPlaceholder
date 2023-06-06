@@ -1,33 +1,30 @@
 "use strict";
 
-const button = document.getElementById("button");
-const div = document.getElementById("messageText");
-const todoField = document.getElementById("todoField");
+const todoButton = document.getElementById("todoButton");
+const messageText = document.getElementById("messageText");
+const todoId = document.getElementById("todoId");
 
-window.onload = () => {
-  button.onclick = onButtonClicked;
+window.onload = init;
 
-};
+function init(){
 
-function onButtonClicked() {
-    // let inputValue = 0;
+  todoButton.onclick = onTodoButtonClick;
 
-  console.log("clicked");
-  fetch("https://jsonplaceholder.typicode.com/todos")
-    .then((response) => response.json())
-    .then((data) => {
-      for(let i=0; i<i<data.length; i++) {
-        // inputValue.valueOf = data[i].title;
-        let message1 = "User todo: " + data[i].title;
-        let message2 = "User complete " + data[i].completed;
-        let message=message1+message2;
-        div.innerHTML = message;
-        console.log(message);
-      
-      }
-    });
 }
 
-// let selectedType = todoField.value;
+function onTodoButtonClick() {
+  console.log("clicked");
 
-// const mountain = mountainsArray.find(mountain => mountain.name === mountainSelected);
+  let theUrl = "https://jsonplaceholder.typicode.com/todos/" + todoId.value;
+  fetch(theUrl)
+  .then((response) => response.json())
+  .then(data => {
+    console.log(data);
+  
+    let message = `TODO ID: ${data.id} ${data.title} completed: ${data.completed} User: ${data.userId}`
+    messageText.innerHTML=message;
+      
+  });
+}
+
+
