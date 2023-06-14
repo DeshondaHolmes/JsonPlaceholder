@@ -21,7 +21,7 @@ function onTodoButtonClick() {
   .then(data => {
     console.log(data);
   
-    let message = `TODO ID: ${data.id} ${data.title} completed: ${data.completed} User: ${data.userId}`
+    let message = `TODO ID: ${data.id}  ${data.title} completed:  ${data.completed} User:  ${data.userId}`
     messageText.innerHTML=message;
       
   });

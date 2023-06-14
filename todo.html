@@ -12,8 +12,13 @@
 <body>
     <header class="mb-5">
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -35,16 +40,35 @@
         </nav>
     </header>
     <main>
-        <form class="container col-6">
-            <h1 class="mb-5">Todo</h1>
-            <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Enter todo id:</span>
-                <input type="text" class="form-control" id="todoId" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-lg">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+
+                    <form>
+                        <h1 class="mb-5 text-center">Review todo message</h1>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">Enter todo id</span>
+                            <input type="text" class="form-control" id="todoId" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-lg">
+                        </div>
+                        <button type="button" class="btn btn-primary mt-4" id="todoButton">Submit</button>
+
+                        <div id="messageText" class="container mt-5"></div>
+                    </form>
+
+
+
+                </div>
+
+
             </div>
-            <button type="button" class="btn btn-primary" id="todoButton">Primary</button>
-            <div id="messageText">Message</div>
-        </form>
+
+
+
+
+
+
+        </div>
 
     </main>
 
