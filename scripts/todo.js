@@ -15,7 +15,7 @@ function init(){
 function onTodoButtonClick() {
   console.log("clicked");
 
-  let theUrl = "https://jsonplaceholder.typicode.com/todos/" + todoId.value;
+  let theUrl = "http://localhost:3000/todos/" + todoId.value;
   fetch(theUrl)
   .then((response) => response.json())
   .then(data => {
